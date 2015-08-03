@@ -1,0 +1,12 @@
+cd /opt/s2i/destination/src
+
+sed -i "s/\$MONGODB_SERVICE_HOST/$MONGODB_SERVICE_HOST/g" config/dev/environment.properties
+sed -i "s/\$MONGODB_SERVICE_PORT/$MONGODB_SERVICE_PORT/g" config/dev/environment.properties
+sed -i "s/\$AUTH_SERVICE_HOST/$AUTH_SERVICE_HOST/g" config/dev/environment.properties
+sed -i "s/\$AUTH_SERVICE_PORT/$AUTH_SERVICE_PORT/g" config/dev/environment.properties
+
+
+mvn clean package
+
+java -jar target/ms-valet-1.0-SNAPSHOT.jar
+
