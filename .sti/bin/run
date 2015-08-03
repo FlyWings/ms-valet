@@ -1,4 +1,5 @@
-cd /opt/s2i/destination/src
+#!/bin/sh
+cd $HOME
 
 sed -i "s/\$MONGODB_SERVICE_HOST/$MONGODB_SERVICE_HOST/g" config/dev/environment.properties
 sed -i "s/\$MONGODB_SERVICE_PORT/$MONGODB_SERVICE_PORT/g" config/dev/environment.properties
